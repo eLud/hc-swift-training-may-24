@@ -33,14 +33,31 @@ struct Dog {
     var age: Int
 }
 
+class Animal {
+    let name: String
+    var age: Int
+
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+
+    func makeNoise() {
+
+    }
+}
+
 // Reference type
-class Cat {
-    let name: String = "Félix"
-    var age = 0
+class Cat: Animal {
+    override func makeNoise() {
+        super.makeNoise()
+        print("miaou")
+        //self.makeNoise() //this
+    }
 }
 
 var dog1 = Dog(name: "Médor", age: 0)
-let cat1 = Cat()
+let cat1 = Cat(name: "Félix", age: 0)
 
 let cat2 = cat1
 let dog2 = dog1
@@ -48,7 +65,7 @@ let dog2 = dog1
 cat1.age = 1
 dog1.age = 1
 
-cat1.age
+print(cat1.age)
 cat2.age
-dog1.age
+print(dog1)
 dog2.age
