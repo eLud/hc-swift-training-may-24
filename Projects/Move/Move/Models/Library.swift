@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+class Library { // Class because reference
+
+    private(set) var items: [Item]
+
+    // Get-only computed property
+    var allItems: [Item] { items }
+
+    init(items: [Item] = []) {
+        self.items = items
+    }
+
+    func add(_ item: Item) {
+        items.append(item)
+    }
+
+    func remove(_ item: Item) {
+        // trouver l'index
+        guard let index = items.firstIndex(of: item) else { return }
+        items.remove(at: index)
+    }
+}

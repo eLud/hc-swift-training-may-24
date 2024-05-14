@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var toSellSwitch: UISwitch!
     @IBOutlet weak var conditionSegmentedControl: UISegmentedControl!
-    
+
+    let library = Library()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -69,6 +71,8 @@ class ViewController: UIViewController {
         guard let condition = Item.Condition(rawValue: selectedIndex) else { fatalError("Condition should not be nil") }
 
         let item = Item(name: name, price: price, comment: "", toSell: toSellSwitch.isOn, condition: condition)
+        library.add(item)
+        // Save the item to the library
     }
 
     func generateSegControl(cond: Item.Condition) {

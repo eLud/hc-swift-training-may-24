@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item {
+struct Item: Equatable {
 
     // Condition est un type imbriqué, à l'usage Item.Condition
     enum Condition: Int, CaseIterable { //raw value: Int, Double, String, Character
