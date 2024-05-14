@@ -12,6 +12,9 @@
 
 // Modéliser le TrucManager
 // Bcp de fonctions
+
+
+
 import Foundation
 
 struct Item {
