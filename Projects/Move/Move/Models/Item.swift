@@ -8,7 +8,9 @@
 import Foundation
 
 struct Item {
-    enum Condition: CaseIterable {
+
+    // Condition est un type imbriqué, à l'usage Item.Condition
+    enum Condition: Int, CaseIterable { //raw value: Int, Double, String, Character
         case perfect
         case ok
         case bad
