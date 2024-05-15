@@ -13,6 +13,10 @@ class Library { // Class because reference
 
     // Get-only computed property
     var allItems: [Item] { items }
+    
+    var count: Int {
+        items.count
+    }
 
     init(items: [Item] = []) {
         self.items = items

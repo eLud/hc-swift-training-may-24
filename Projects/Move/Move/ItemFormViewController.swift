@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ItemFormViewController.swift
 //  Move
 //
 //  Created by Ludovic Ollagnier on 14/05/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ItemFormViewController: UIViewController {
     
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var toSellSwitch: UISwitch!
     @IBOutlet weak var conditionSegmentedControl: UISegmentedControl!
-
+    @IBOutlet weak var priceStackView: UIStackView!
+    @IBOutlet weak var toSellLabel: UILabel!
+    
     let library = Library()
 
     override func viewDidLoad() {
@@ -76,6 +78,18 @@ class ViewController: UIViewController {
     }
 
     func generateSegControl(cond: Item.Condition) {
+
+    }
+
+    @IBAction func togglePriceVisibility(_ sender: UISwitch) {
+
+//        UIView.animate(withDuration: 0.2) {
+//            self.priceStackView.isHidden = !sender.isOn
+//        }
+
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 20, animations: {
+            self.priceStackView.isHidden = !sender.isOn
+        })
 
     }
 }

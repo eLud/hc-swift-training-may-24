@@ -69,3 +69,38 @@ print(cat1.age)
 cat2.age
 print(dog1)
 dog2.age
+
+
+struct Point {
+    let x: Double
+    let y: Double
+}
+
+struct Size {
+    let width: Double
+    let height: Double
+}
+
+struct Rect {
+    var origin: Point
+    var size: Size
+
+    var center: Point {
+        get {
+            Point(x: origin.x + size.width / 2, y: origin.y + size.height / 2)
+        }
+
+        set {
+            let newX = newValue.x - size.width / 2
+            let newY = newValue.y - size.height / 2
+            let newOrigin = Point(x: newX, y: newY)
+            origin = newOrigin
+        }
+    }
+}
+
+var firstRect = Rect(origin: Point(x: 0, y: 0), size: Size(width: 10, height: 10))
+firstRect.center
+//firstRect.origin = Point(x: -5, y: -5)
+firstRect.center = Point(x: 0, y: 0)
+firstRect.origin
