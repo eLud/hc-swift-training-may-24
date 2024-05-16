@@ -21,6 +21,11 @@ class ItemListViewController: UIViewController {
         tableView.delegate = self
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "form", let destination = segue.destination as? ItemFormViewController {
+            destination.library = library
+        }
+    }
 }
 
 extension ItemListViewController: UITableViewDataSource {
@@ -30,7 +35,7 @@ extension ItemListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return library.count
+        return 20
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,7 +50,7 @@ extension ItemListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
 
         // Customize the cell
-        let item = library.allItems[indexPath.row]
+        let item = library.allItems[0]
 
         var contentConfig = cell.defaultContentConfiguration()
         contentConfig.text = item.name

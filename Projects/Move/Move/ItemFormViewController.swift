@@ -18,7 +18,7 @@ class ItemFormViewController: UIViewController {
     @IBOutlet weak var priceStackView: UIStackView!
     @IBOutlet weak var toSellLabel: UILabel!
     
-    let library = Library()
+    var library: Library?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +73,10 @@ class ItemFormViewController: UIViewController {
         guard let condition = Item.Condition(rawValue: selectedIndex) else { fatalError("Condition should not be nil") }
 
         let item = Item(name: name, price: price, comment: "", toSell: toSellSwitch.isOn, condition: condition)
-        library.add(item)
+        library?.add(item)
         // Save the item to the library
+
+        dismiss(animated: true)
     }
 
     func generateSegControl(cond: Item.Condition) {

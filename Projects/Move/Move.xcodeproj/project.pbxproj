@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		331228C82BF4C6C0007CF8B0 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331228C72BF4C6C0007CF8B0 /* ItemListViewController.swift */; };
+		334A33202BF50C960046BDDD /* TagsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334A331F2BF50C960046BDDD /* TagsStoryboard.storyboard */; };
 		33A532852BF34C7700BB390F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A532842BF34C7700BB390F /* AppDelegate.swift */; };
 		33A532872BF34C7700BB390F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A532862BF34C7700BB390F /* SceneDelegate.swift */; };
 		33A532892BF34C7700BB390F /* ItemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A532882BF34C7700BB390F /* ItemFormViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		331228C72BF4C6C0007CF8B0 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		334A331F2BF50C960046BDDD /* TagsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagsStoryboard.storyboard; sourceTree = "<group>"; };
 		33A532812BF34C7700BB390F /* Move.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Move.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A532842BF34C7700BB390F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A532862BF34C7700BB390F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				33A532882BF34C7700BB390F /* ItemFormViewController.swift */,
 				331228C72BF4C6C0007CF8B0 /* ItemListViewController.swift */,
 				33A5328A2BF34C7700BB390F /* Main.storyboard */,
+				334A331F2BF50C960046BDDD /* TagsStoryboard.storyboard */,
 				33A5328D2BF34C7800BB390F /* Assets.xcassets */,
 				33A5328F2BF34C7800BB390F /* LaunchScreen.storyboard */,
 				33A532922BF34C7800BB390F /* Info.plist */,
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334A33202BF50C960046BDDD /* TagsStoryboard.storyboard in Resources */,
 				33A5328E2BF34C7800BB390F /* Assets.xcassets in Resources */,
 				33A532912BF34C7800BB390F /* Base in Resources */,
 				33A5328C2BF34C7700BB390F /* Base in Resources */,
