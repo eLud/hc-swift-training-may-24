@@ -12,6 +12,7 @@ class ItemListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     let library = Library(items: [Item(name: "Test", price: 25, comment: "", toSell: true, condition: .bad)])
+    var refresh: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,16 @@ class ItemListViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        refresh = UIRefreshControl(frame: .zero, primaryAction: UIAction(handler: { action in
+            self.tableView.reloadData()
+        }))
+        tableView.refreshControl = refresh
+
+        let notifCenter = NotificationCenter.default
+        notifCenter.addObserver(forName: Notification.Name("modelUpdated"), object: library, queue: OperationQueue.main) { notif in
+            self.tableView.reloadData()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,11 +42,12 @@ class ItemListViewController: UIViewController {
 extension ItemListViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        refresh?.endRefreshing()
+        return library.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +62,7 @@ extension ItemListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
 
         // Customize the cell
-        let item = library.allItems[0]
+        let item = library.allItems[indexPath.row]
 
         var contentConfig = cell.defaultContentConfiguration()
         contentConfig.text = item.name

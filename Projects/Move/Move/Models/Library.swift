@@ -24,11 +24,15 @@ class Library { // Class because reference
 
     func add(_ item: Item) {
         items.append(item)
+        let notifCenter = NotificationCenter.default
+        notifCenter.post(name: Notification.Name("modelUpdated"), object: self)
     }
 
     func remove(_ item: Item) {
         // trouver l'index
         guard let index = items.firstIndex(of: item) else { return }
         items.remove(at: index)
+        let notifCenter = NotificationCenter.default
+        notifCenter.post(name: Notification.Name("modelUpdated"), object: self)
     }
 }
