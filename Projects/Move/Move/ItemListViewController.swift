@@ -35,6 +35,9 @@ class ItemListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "form", let destination = segue.destination as? ItemFormViewController {
             destination.library = library
+        } else if segue.identifier == "details" {
+            guard let selected = tableView.indexPathForSelectedRow else { return }
+//            destination.itemToDisplay = library.allItems[selected.row]
         }
     }
 }
