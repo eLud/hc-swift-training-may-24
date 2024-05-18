@@ -17,6 +17,7 @@
 		334A335A2BF634390046BDDD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334A33592BF634390046BDDD /* Item.swift */; };
 		334A335C2BF6343F0046BDDD /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334A335B2BF6343F0046BDDD /* Library.swift */; };
 		334A335E2BF63EAF0046BDDD /* ImagedToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334A335D2BF63EAF0046BDDD /* ImagedToggle.swift */; };
+		33CB43242BF7B04300FF2C68 /* ExyteMediaPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 33CB43232BF7B04300FF2C68 /* ExyteMediaPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CB43242BF7B04300FF2C68 /* ExyteMediaPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +164,9 @@
 			dependencies = (
 			);
 			name = MoveUI;
+			packageProductDependencies = (
+				33CB43232BF7B04300FF2C68 /* ExyteMediaPicker */,
+			);
 			productName = MoveUI;
 			productReference = 334A332A2BF5F5F80046BDDD /* MoveUI.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +239,9 @@
 				Base,
 			);
 			mainGroup = 334A33212BF5F5F80046BDDD;
+			packageReferences = (
+				33CB43222BF7B04300FF2C68 /* XCRemoteSwiftPackageReference "MediaPicker" */,
+			);
 			productRefGroup = 334A332B2BF5F5F80046BDDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,6 +452,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Je veux la caméra";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -482,6 +491,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Je veux la caméra";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -637,6 +647,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33CB43222BF7B04300FF2C68 /* XCRemoteSwiftPackageReference "MediaPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/MediaPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33CB43232BF7B04300FF2C68 /* ExyteMediaPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33CB43222BF7B04300FF2C68 /* XCRemoteSwiftPackageReference "MediaPicker" */;
+			productName = ExyteMediaPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 334A33222BF5F5F80046BDDD /* Project object */;
 }

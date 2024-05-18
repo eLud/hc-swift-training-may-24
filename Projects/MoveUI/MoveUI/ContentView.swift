@@ -73,6 +73,19 @@ struct ContentView: View {
 
         let item = Item(name: name, price: price, comment: "", toSell: toSell, condition: condition)
     }
+
+    func networkRequest() async {
+        let url = URL(string: "http://www.apple.com")!
+        let urlRequest = URLRequest(url: url)
+        
+        do {
+            let data = try await URLSession.shared.data(for: urlRequest)
+        } catch {
+            print(error)
+        }
+
+        guard let data = try? await URLSession.shared.data(for: urlRequest) else { return }
+    }
 }
 
 #Preview {

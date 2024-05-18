@@ -13,13 +13,17 @@ struct BasketView: View {
     var data: AppData
     @Binding var text: String
 
+    @AppStorage("laClé") var maVariable = "valeur par défaut"
+
     @State var isDisplayed = false
 
     var body: some View {
         VStack {
             TextField("Name", text: $text)
+            TextField("Persisté", text: $maVariable)
             Button("Toggle") {
                 isDisplayed.toggle()
+                maVariable = "Bouton"
             }
         }
     }

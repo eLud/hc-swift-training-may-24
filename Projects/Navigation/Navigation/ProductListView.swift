@@ -16,7 +16,9 @@ struct ProductListView: View {
 
     var body: some View {
         List(data.products) { product in
-            NavigationLink(value: Screens.product(product)) {
+            NavigationLink {
+                ProductView(product: product)
+            } label: {
                 Text(product.name)
             }
         }

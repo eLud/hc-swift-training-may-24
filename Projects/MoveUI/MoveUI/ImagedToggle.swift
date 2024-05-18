@@ -10,6 +10,7 @@ import SwiftUI
 struct ImagedToggle: View {
 
     @Binding var isOn: Bool
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         ZStack(alignment: isOn ? .trailing : .leading) {
@@ -20,6 +21,7 @@ struct ImagedToggle: View {
         .onTapGesture {
             withAnimation {
                 isOn.toggle()
+                dismiss()
             }
         }
     }

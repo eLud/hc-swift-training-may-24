@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ExyteMediaPicker
 
 @main
 struct MoveUIApp: App {
@@ -36,6 +37,9 @@ struct MoveUIApp: App {
                         Image(systemName: "c.circle")
                     }
                     .tag("C")
+                MediaPicker(isPresented: .constant(true)) { array in
+
+                }
             }
         }
     }
